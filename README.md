@@ -99,7 +99,6 @@ List<String> lowCaloricDishesName = menu.stream().filter(d -> d.getCalories() < 
                                                   .collect(toList());
                                                   
 stream() 메서드를 parallelStream() 메서드로 변경하면 멀티코어 아키텍처에서 병렬로 실행 가능하다.
-
-
-
 ```
+
+

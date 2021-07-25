@@ -67,3 +67,39 @@
 ---  
 **4.1. 스트림이란 무엇인가?**
 자바 8 API에 새로 추가된 기능으로 스트림을 이용하면 선언형으로 컬렉션 데이터를 처리할 수 있다. 스트림을 이용하면 복잡한 멀티 스레드 코드를 구현하지 않고 투명하게 병렬로 처리할 수 있다.
+
+자바 8 이전 코드
+```
+List<Dish> lowCaloricDishes = new ArrayList<>();
+for(Dish dish : menu) {
+  if(dish.getCalories() < 400) {
+     lowCaloricDishes.add(dish);
+  }
+}
+
+Collections.sort(lowCaloricDishes, new Comparator<Dish>() {
+    public int compare(Dish dish1, Dish dish2) {
+      return Integer.compare(dish1.getCalories(), dish2.getCalories());
+    }
+});
+
+List<String> lowCaloricDishedName = new ArrayList<>();
+for(Dish dish : lowCaloricDishes) {
+  lowCaloricDishesName.add(dish.getName());
+}
+
+``` 
+
+자바 8 이후 코드
+```
+
+List<String> lowCaloricDishesName = menu.stream().filter(d -> d.getCalories() < 400)
+                                                  .sorted(comparing(Dish::getCalories))
+                                                  .map(Dish::getName)
+                                                  .collect(toList());
+                                                  
+stream() 메서드를 parallelStream() 메서드로 변경하면 멀티코어 아키텍처에서 병렬로 실행 가능하다.
+
+
+
+```

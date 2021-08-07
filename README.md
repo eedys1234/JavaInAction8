@@ -1,4 +1,4 @@
-# JavaInAction8
+# 자바 인 액션8
 
 ## `Chapter 2`
 - #### 동적 파라미터화

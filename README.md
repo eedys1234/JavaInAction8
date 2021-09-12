@@ -132,3 +132,18 @@ stream() 메서드를 parallelStream() 메서드로 변경하면 멀티코어 �
 ---
 
 
+
+#####
+`16장 CompletableFuture 안정적 비동기 프로그래밍`
+- 비동기 자업을 만들고 결과얻기
+- 비블록 동작으로 생산성 높이기
+- 비동기 API 설계와 구현
+- 동기 API를 비동기적으로 소비하기
+- 두 개 이상의 비동기 연산을 파이프라인으로 만들고 합치기
+- 비동기 작업 완료에 대응하기
+
+
+`Exectors.newCachedThreadPool()`
+![image](https://user-images.githubusercontent.com/16433283/125187575-3300ca80-e26b-11eb-89d4-5398ca8f284b.png)
+
+
